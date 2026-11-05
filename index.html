@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Зико — семейная кофейня в Астане</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f7efe2">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: their printed menu (cream paper, orange rules, script logo) turned into a page; the Thursday cinnamon-coffee promo is the one warm moment */
+:root{
+  --paper:#f7efe2; --paper-2:#efe2cd; --ink:#2f2722; --muted:#7c6a5c; --orange:#d9622b; --orange-2:#b84e1d; --green:#2f5d3a; --line:#e3d4bd;
+  --script:"Lobster",cursive; --text:"Nunito Sans",system-ui,sans-serif;
+  --ease:cubic-bezier(0.23,1,0.32,1);
+}
+*{box-sizing:border-box}
+html{touch-action:manipulation;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--text);-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:24px}
+
+.demo{background:var(--ink);color:var(--paper);font-size:13px;text-align:center;padding:7px 16px}
+
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px;border-bottom:2px solid var(--orange)}
+.brand{text-decoration:none;font:400 34px/1 var(--script);color:var(--orange)}
+.brand small{display:block;font:700 10px var(--text);letter-spacing:.3em;color:var(--muted);margin-top:2px}
+nav{display:flex;gap:26px;font-size:15px;font-weight:600}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px var(--text);text-decoration:none;padding:13px 24px;border-radius:999px;border:1.5px solid var(--orange);transition:transform 160ms var(--ease),background-color 160ms ease,color 160ms ease}
+.btn:active{transform:scale(.97)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--orange-2);border-color:var(--orange-2)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--paper-2)}
+
+.hero{padding-block:56px 64px;text-align:center}
+.hero .kicker{font-weight:700;font-size:14px;letter-spacing:.2em;color:var(--green);margin:0 0 10px;text-transform:uppercase}
+.hero h1{font:400 clamp(44px,8vw,92px)/1.05 var(--script);margin:0;color:var(--orange)}
+.hero p{max-width:40ch;margin:18px auto 30px;color:var(--muted);font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 30px;margin-top:32px;font-size:15px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:700}
+
+.thursday{background:var(--green);color:#f3ead9}
+.thursday .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;padding-block:24px;text-align:center}
+.thursday b{font:400 30px var(--script);color:#fff}
+
+section{padding-block:72px}
+h2{font:800 clamp(28px,4vw,40px)/1.1 var(--text);margin:0 0 6px;text-transform:uppercase;letter-spacing:.02em}
+.rule{height:2px;background:var(--orange);margin:0 0 22px}
+.sub{color:var(--muted);margin:0 0 26px;max-width:60ch}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:28px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;background:transparent;border:1.5px solid var(--line);color:var(--muted);font:700 15px var(--text);padding:9px 16px;border-radius:999px;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease}
+.tab:hover{color:var(--ink);border-color:var(--orange)}
+.tab[aria-selected="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.note{font-size:14px;color:var(--green);font-weight:700;margin:-12px 0 20px}
+
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 52px}
+.it{padding-block:13px;border-bottom:1px solid var(--line)}
+.it .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.it h3{font:700 17px/1.3 var(--text);margin:0}
+.it b{font:800 17px var(--text);white-space:nowrap;font-variant-numeric:tabular-nums}
+.it p{margin:3px 0 0;font-size:14px;color:var(--muted);font-style:italic}
+
+.visit{background:var(--paper-2)}
+.visit .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-bottom:32px}
+.visit h3{font:800 14px var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin:0 0 8px}
+.visit p{margin:0}
+
+footer{padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (max-width:760px){
+  nav{display:none}
+  .items,.visit .grid{grid-template-columns:1fr}
+  section{padding-block:56px}
+  .hero{padding-block:40px 48px}
+}
+</style></head>
+<body>
+
+<div class="demo">Демо-концепт сайта от Pixel Studio · не официальный сайт кофейни</div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Зико<small>КОФЕЙНЯ</small></a>
+  <nav><a href="#menu">Меню</a><a href="#visit">Как найти</a></nav>
+  <a class="btn btn-orange" href="https://wa.me/77017711777" target="_blank" rel="noopener">Написать</a>
+</div></header>
+
+<main>
+  <section class="hero"><div class="wrap">
+    <p class="kicker">Семейная кофейня на Туран, 34А</p>
+    <h1>Здесь начинается ваш хороший день</h1>
+    <p>Кофе, завтраки и любимые блюда. Завтраки подаём с 10:00 до 13:00, кухня работает до вечера.</p>
+    <div class="cta">
+      <a class="btn btn-orange" href="#menu">Смотреть меню</a>
+      <a class="btn btn-line" href="#visit">Как нас найти</a>
+    </div>
+    <div class="facts"><span><b>4,8</b> в 2ГИС</span><span>Ежедневно <b>10:00–22:00</b></span><span>Туран, <b>34А</b></span></div>
+  </div></section>
+
+  <div class="thursday"><div class="wrap"><b>По четвергам</b><span>кофе с корицей</span></div></div>
+
+  <section id="menu"><div class="wrap">
+    <h2>Меню</h2>
+    <div class="rule"></div>
+    <p class="sub">Цены в тенге. Обслуживание 10%.</p>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <p class="note" id="note"></p>
+    <div class="items" id="items" aria-live="polite"></div>
+  </div></section>
+
+  <section class="visit" id="visit"><div class="wrap">
+    <h2>Как нас найти</h2>
+    <div class="rule"></div>
+    <div class="grid">
+      <div><h3>Адрес</h3><p>Астана, Нура район,<br>проспект Туран, 34А</p></div>
+      <div><h3>Часы</h3><p>Ежедневно<br>10:00–22:00</p></div>
+      <div><h3>Телефон</h3><p>+7 701 771 17 77<br>+7 7172 29 23 40</p></div>
+    </div>
+    <div class="cta" style="justify-content:flex-start">
+      <a class="btn btn-orange" href="https://wa.me/77017711777" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn btn-line" href="https://2gis.kz/astana/firm/70000001082645461" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>Зико · семейная кофейня · Астана</span>
+  <a href="https://www.instagram.com/ziko.coffee/" target="_blank" rel="noopener">Instagram</a>
+</div></footer>
+
+<script>
+// [name, price, description]; price may be "a / b / c" for sizes
+const MENU = [
+  { id: "breakfast", title: "Завтраки", note: "Подаются с 10:00 до 13:00", items: [
+    ["Белковый омлет", 2800, "Белок яичный, соус гуакамоле, хлеб тартин"], ["Круассан с курицей", 2200, "Яйцо, курица, помидоры, огурцы"],
+    ["Круассан с сёмгой", 2700, "Сёмга слабосолёная, яйцо, огурцы, помидоры, соус 1000 островов"], ["Клаб сэндвич с сёмгой", 2500],
+    ["Клаб сэндвич с курицей", 1900], ["Скрэмбл с лососем", 3100, "Скрэмбл из 2 яиц, хлеб, лосось, огурцы, авокадо, тост"],
+    ["Шакшука с белой фасолью и грибами", 2900], ["Каша овсяная с бананом", 1890], ["Драник с цукини", 2600, "Цукини, сметана, яйцо пашот, микс салата"],
+    ["Омлет", 2700, "Омлет из 3 яиц, греческий салат, авокадо, хлеб"], ["Глазунья с колбаской", 2900], ["Каша рисовая на кокосовом молоке", 1890],
+    ["Тартин с копчёной индейкой", 2800] ] },
+  { id: "soups", title: "Супы", items: [
+    ["Том-ям", 3400, "Кокосовое молоко, креветки, лосось, рис, листья лайма"], ["Пельмени с говядиной", 2400, "Говяжий бульон"],
+    ["Рамен с говядиной", 3100], ["Рамен с курицей", 2800], ["Суп-лапша по-домашнему", 2100, "Фирменная лапша, курица, лук, морковь"] ] },
+  { id: "salads", title: "Салаты", items: [
+    ["Тёплый салат с говядиной", 3200], ["Цезарь с лососем", 2800], ["Салат азиатский с хрустящими баклажанами", 2900],
+    ["Цезарь с курицей", 2400], ["Курица в соусе терияки", 2400, "Микс-салат, черри, куриное филе, соевый соус"] ] },
+  { id: "hot", title: "Горячие блюда", items: [
+    ["Паста карбонара", 3500], ["Куриное филе в сливочном соусе", 3200], ["Спагетти с куриным филе", 3500], ["Куриный шницель", 2800],
+    ["Феттучини с сёмгой", 3500], ["Феттучини с курицей и грибами", 3200], ["Фарфале с грибами", 3100], ["Бефстроганов с пюре", 4100],
+    ["Креветки с брокколи", 3600], ["Медальоны из говядины", 4800], ["Стейк рибай", 5900, "Рибай, картофельные дольки, грибной соус"],
+    ["Жульен из индейки", 3200], ["Мясо по-азиатски", 4200], ["Феттучини с креветками", 3800] ] },
+  { id: "pizza", title: "Пицца и гарниры", items: [
+    ["Пицца «Маргарита»", 2600], ["Пицца «Охотничья»", 3100], ["Пицца «Курица, грибы»", 2800], ["Закрытая пицца с курицей и чесночным соусом", 2600],
+    ["Хлеб", 600], ["Брокколи жареные", 1200], ["Брокколи на пару", 1200], ["Рис", 900], ["Пюре", 1200], ["Фри", 1200] ] },
+  { id: "sweet", title: "Выпечка и десерты", items: [
+    ["Классический круассан", 800], ["Фисташковый круассан", 1600], ["Миндальный круассан", 1500], ["Шоколадный круассан", 1450],
+    ["Пончики: орео, M&M's, шоколад-орех", 990], ["Чизкейки: банан-карамель, вишня, черника, малина, клубника, нью-йорк, шоколад", 1390] ] },
+  { id: "coffee", title: "Кофе", note: "250 / 350 / 450 мл", items: [
+    ["Американо", "890 / 990 / 1090"], ["Латте", "990 / 1090 / 1190"], ["Капучино", "990 / 1190 / 1290"], ["Мокачино", "1390 / 1490 / 1590"],
+    ["Раф", "1390 / 1490 / 1590"], ["Какао", "1090 / 1190 / 1290"], ["Флэт уайт", 1190, "250 мл"],
+    ["Фраппучино", 1590, "400 мл"], ["Айс латте", 1390, "400 мл"], ["Айс капучино", 1390, "400 мл"], ["Гляссе", 1590, "400 мл"] ] },
+  { id: "tea", title: "Чай и коктейли", items: [
+    ["Чёрный или зелёный", "390 / 490 / 590 / 1090", "250 / 350 / 450 / 1000 мл"], ["Матча", "990 / 1090 / 1190", "250 / 350 / 450 мл"],
+    ["Ташкентский, марокканский, ягодный, облепиховый, малиновый, имбирный", "1090 / 2090", "450 / 1000 мл"], ["Глинтвейн", "1290 / 2290", "450 / 1000 мл"],
+    ["Милкшейки: клубничный, шоколадный, ванильный, орео, банан, попкорн", 1590, "400 мл"] ] },
+];
+const fmt = new Intl.NumberFormat("ru-RU");
+const price = p => typeof p === "string" ? p.split(" / ").map(n => fmt.format(+n)).join(" / ") : fmt.format(p);
+const tabs = document.getElementById("tabs"), box = document.getElementById("items"), note = document.getElementById("note");
+function show(id) {
+  const cat = MENU.find(c => c.id === id) || MENU[0];
+  tabs.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.dataset.id === cat.id));
+  note.textContent = cat.note || ""; note.hidden = !cat.note;
+  box.innerHTML = cat.items.map(([n, p, d]) => `<div class="it"><div class="row"><h3>${n}</h3><b>${price(p)} ₸</b></div>${d ? `<p>${d}</p>` : ""}</div>`).join("");
+}
+MENU.forEach(c => {
+  const b = document.createElement("button");
+  b.className = "tab"; b.type = "button"; b.role = "tab"; b.dataset.id = c.id; b.textContent = c.title;
+  b.addEventListener("click", () => show(c.id));
+  tabs.appendChild(b);
+});
+show("breakfast");
+</script>
+</body></html>
